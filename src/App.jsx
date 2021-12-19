@@ -16,7 +16,7 @@ function HolaMundo(nombre,tema) {
 
 
 function App() {
-  var nombre = "Diego Hernán Saavedra Espejo"
+  var nombre = "Diego Hernán Saavedra Espejo Kernel"
   var tema="React MiPrimeraApp"
   return (
     <div className="App">
