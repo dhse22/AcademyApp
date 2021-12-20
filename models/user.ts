@@ -1,15 +1,14 @@
 import { Schema, model } from 'mongoose';
-/*import Enum_Rol from './enums';
+// import { Enum_Rol, Enum_EstadoUsuario } from '../enums/enums';
 
-/*
-interface User{
-    correo: string;
-    identificacion: string;
-    nombre: string;
-    apellido: string;
-    rol: Enum_Rol;
-}
-*/
+// interface User {
+//   correo: string;
+//   identificacion: string;
+//   nombre: string;
+//   apellido: string;
+//   rol: Enum_Rol;
+//   estado: Enum_EstadoUsuario;
+// }
 
 const userSchema = new Schema
     (
@@ -17,6 +16,20 @@ const userSchema = new Schema
             correo: {
                 type: String,
                 required: true,
+                unique: true,
+                validate: {
+                    validator: (email) => {
+                        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+                    },
+                    // (email) => {
+                    //   if (email.includes('@') && email.includes('.')) {
+                    //     return true;
+                    //   } else {
+                    //     return false;
+                    //   }
+                    // },
+                    message: 'El formato del correo electrónico es erróneo.',
+                },
             },
             password: {
                 type: String,
@@ -48,6 +61,6 @@ const userSchema = new Schema
         }
     );
 
-const UserModel = model('User', userSchema);
+const UserModel = model('User', userSchema,'Usuarios');
 
 export default UserModel;

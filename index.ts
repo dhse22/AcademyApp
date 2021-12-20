@@ -17,15 +17,15 @@ const main = async () => {
         rol:Enum_Rol.administrador,
     })
 */
-/*
+
 //CREANDO USUARIO
     await UserModel.create({
-        correo: 'dhse@gmail.com',
+        correo: 'dwait@gmail.com',
         password:'hashschema123',
-        identificacion: '1234',
-        nombre: 'Diego',
-        apellido: 'Saavedra',
-        rol:'LIDER',
+        identificacion: '333',
+        nombre: 'Diegold',
+        apellido: 'Saavedran',
+        rol:'ADMINISTRADOR',
         estado:'PENDIENTE',
     })
         .then((u) => {
@@ -35,7 +35,7 @@ const main = async () => {
             console.log('error creado el usuario', e);
         });
 
-
+/*
 //CREANDO PROYECTO
     await ProjectModel.create({
         nombre: 'ciencias',
@@ -116,7 +116,7 @@ const main = async () => {
         .catch((e) => {
             console.error('error actualizando el usuario', e);
         });
-*/
+
     //ELIMINAR USUARIO
     await UserModel.findOneAndDelete(
         { correo: "dhse@gmail.com" },
@@ -131,7 +131,7 @@ const main = async () => {
         .catch((e) => {
             console.error('error eliminando el usuario', e);
         });
-    
+*/
 };
 
 main();
