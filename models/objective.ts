@@ -15,6 +15,6 @@ const objectiveSchema = new Schema({
     },
 });
 
-const ObjectiveModel = model('Objetivo', objectiveSchema);
+const ObjectiveModel = model('Objetivo', objectiveSchema,'Objetivos');
 
 export default ObjectiveModel ;
